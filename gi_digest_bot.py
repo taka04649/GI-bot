@@ -25,7 +25,7 @@ GI_DIGEST_WEBHOOK_URL = os.environ["GI_DIGEST_WEBHOOK_URL"]
 GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 
 genai.configure(api_key=GEMINI_API_KEY)
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3-flash-preview"
 
 # 通知済みPMID記録
 NOTIFIED_FILE = Path(__file__).parent / "notified_digest_pmids.json"
@@ -196,7 +196,7 @@ def generate_digest(article: dict) -> dict:
 
 HEADLINE: （知見の核心を1行で。例: 「JAK阻害薬の逐次投与、UC患者で有効性を維持」）
 
-BODY: （3〜5文で。なぜ重要なのか、従来の知見と何が違うのか、臨床へのインパクトは何かを含める。専門医が読んで「へぇ」と思うような切り口で。）
+BODY: （500‐700字程度で。なぜ重要なのか、従来の知見と何が違うのか、臨床へのインパクトは何かを含める。専門医が読んで「へぇ」と思うような切り口で。）
 
 CATEGORY: （以下から1つ選択: IBD / 肝臓 / 膵胆道 / 消化管腫瘍 / 上部消化管 / 下部消化管 / 腸内細菌叢 / 内視鏡 / 機能性疾患 / その他）
 
